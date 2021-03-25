@@ -5,19 +5,19 @@
       <a href="/admin" class="btn btn-outline-dark">商品一覧</a>
     </div>
   </div>
-  <form>
+  <%= form_with model: @product, url: admin_url do |f| %>
     <div class="form-group">
-      <label for="name">商品名</label>
-      <input id="name" class="form-control">
+      <%= f.label :name, '商品名' %>
+      <%= f.text_field :name, class: 'form-control' %>
     </div>
     <div class="form-group">
-      <label for="title">画像</label>
-      <input id="title" class="form-control">
+      <%= f.label :image, '画像' %>
+      <%= f.text_field :image, class: 'form-control' %>
     </div>
     <div class="form-group">
-      <label for="body">料金</label>
-      <input id="price" class="form-control">
+      <%= f.label :price, '料金' %>
+      <%= f.text_field :price, class: 'form-control' %>
     </div>
-    <button type="submit" class="btn btn-primary">保存</button>
-  </form>
+    <%= f.submit '保存', class: 'btn btn-primary' %>
+  <% end %>
 </div>
