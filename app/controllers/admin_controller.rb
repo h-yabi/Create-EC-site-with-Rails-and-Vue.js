@@ -1,5 +1,6 @@
 class AdminController < ApplicationController
   def index
+    @products = Product.all
   end
 
   def new
@@ -8,7 +9,7 @@ class AdminController < ApplicationController
 
   def create
     Product.create(product_params)
-    binding.pry
+    # binding.pry
   end
 
   private

@@ -13,27 +13,24 @@
     <thead class="thead-dark">
       <tr>
         <th>ID</th>
-        <th>タイトル</th>
-        <th>作成者</th>
+        <th>商品名</th>
+        <th>画像</th>
+        <th>料金</th>
         <th>作成日時</th>
         <th>更新日時</th>
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <th>1</th>
-        <td>雑談掲示板</td>
-        <td>Taro</td>
-        <td>2018年4月1日</td>
-        <td>2018年4月15日</td>
-      </tr>
-      <tr>
-        <th>2</th>
-        <td>雑談掲示板2</td>
-        <td>Ken</td>
-        <td>2018年4月1日</td>
-        <td>2018年4月15日</td>
-      </tr>
+      <% @products.each do |product| %>
+        <tr>
+          <th><%= product.id %></th>
+          <th><%= product.name %></th>
+          <th><%= product.image %></th>
+          <th><%= product.price %></th>
+          <th><%= product.created_at.to_s(:datetime_jp) %></th>
+          <th><%= product.updated_at.to_s(:datetime_jp) %></th>
+        </tr>
+      <% end %>
     </tbody>
   </table>
 </div><!-- container -->
