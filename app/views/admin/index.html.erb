@@ -25,7 +25,11 @@
         <tr>
           <th><%= product.id %></th>
           <th><%= product.name %></th>
-          <th><%= product.image %></th>
+          <th>
+            <% if product.image? %>
+              <%= image_tag product.image.url %>
+            <% end %>
+          </th>
           <th><%= product.price %></th>
           <th><%= product.created_at.to_s(:datetime_jp) %></th>
           <th><%= product.updated_at.to_s(:datetime_jp) %></th>
