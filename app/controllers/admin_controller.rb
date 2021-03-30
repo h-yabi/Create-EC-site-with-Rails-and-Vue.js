@@ -15,6 +15,18 @@ class AdminController < ApplicationController
     @product = Product.find(params[:id])
   end
 
+  def edit
+    @product = Product.find(params[:id])
+  end
+
+  def update
+    # binding.pry
+    product = Product.find(params[:id])
+    product.update(product_params)
+
+    redirect_to('/admin')
+  end
+
   private
     def product_params
       params.require(:product).permit(:name, :image, :price)
