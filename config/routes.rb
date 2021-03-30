@@ -3,5 +3,6 @@ Rails.application.routes.draw do
   get 'admin', to: 'admin#index'
   get 'admin/new', to: 'admin#new'
   post 'admin', to: 'admin#create'
+  get 'admin/:id', to: 'admin#show'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

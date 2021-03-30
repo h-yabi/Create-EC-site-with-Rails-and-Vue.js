@@ -9,7 +9,10 @@ class AdminController < ApplicationController
 
   def create
     Product.create(product_params)
-    # binding.pry
+  end
+
+  def show
+    @product = Product.find(params[:id])
   end
 
   private

@@ -4,7 +4,7 @@
 
 <div class="container">
   <div class="d-flex align-items-center">
-    <h1>登録商品一覧</h1>
+    <h1>商品一覧</h1>
     <div class="ml-auto productList__linkBox">
       <a href="/admin/new" class="btn btn-outline-dark">新規作成</a>
     </div>
@@ -25,12 +25,14 @@
         <tr>
           <th><%= product.id %></th>
           <th><%= product.name %></th>
-          <th>
+          <th class="productList__img">
             <% if product.image? %>
               <%= image_tag product.image.url %>
+            <% else %>
+              <%= image_tag "noimage.png" %>
             <% end %>
           </th>
-          <th><%= product.price %></th>
+          <th><%= product.price %>円</th>
           <th><%= product.created_at.to_s(:datetime_jp) %></th>
           <th><%= product.updated_at.to_s(:datetime_jp) %></th>
         </tr>

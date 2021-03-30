@@ -2,9 +2,30 @@
   tr:hover {
     cursor: pointer;
   }
+  th, td {
+    padding: 10px 15px;
+    vertical-align: middle;
+  }
 }
 .productList__linkBox {
   a {
     margin: 0 8px;
+  }
+}
+.productList__img {
+  width: 90px;
+  overflow: hidden;
+  img {
+    // position: absolute;
+    // top: 50%;
+    // left: 50%;
+    width: 100%;
+    // transform: translate(-50%, -50%);
+  }
+}
+.card-img {
+  max-width: 300px;
+  img {
+    width: 100%;
   }
 }

@@ -1,0 +1,29 @@
+<% content_for :css do %>
+  <%= stylesheet_link_tag 'admin' %>
+<% end %>
+
+<div class="container">
+  <div class="d-flex align-items-center mt-4 mb-4">
+    <div class="ml-auto boards__linkBox">
+      <a href="/boards" class="btn btn-outline-dark">一覧</a>
+      <a href="/boards" class="btn btn-outline-dark">編集</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      <h4><%= @product.name %></h4>
+    </div>
+    <div class="card-body">
+      <p class="card-img">
+        <% if @product.image? %>
+          <%= image_tag @product.image.url %>
+        <% else %>
+          <%= image_tag "noimage.png" %>
+        <% end %>
+      </p>
+      <p class="font-weight-bold mr-10">
+        <%= @product.price %>円
+      </p>
+    </div>
+  </div></div><!-- container -->
